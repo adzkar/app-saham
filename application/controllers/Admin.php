@@ -5,8 +5,6 @@ class Admin extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('admin/components/menu_view');
-		$this->load->view('admin/blank_view');
-		$this->load->view('admin/components/footer_view');
+		$this->template->view();
 	}
 }
