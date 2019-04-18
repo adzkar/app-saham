@@ -39,7 +39,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="../../index2.html" class="logo">
+    <a href="#" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
@@ -94,12 +94,12 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
         <li>
-          <a href="#">
+          <a href="<?= $url ?>">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
-        <li class="treeview">
-          <a href="#">
+        <li>
+          <a href="<?=$url?>manage_user">
             <i class="fa fa-users"></i> <span>Manage Users</span>
           </a>
         </li>
@@ -111,8 +111,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="../tables/simple.html"><i class="fa fa-circle-o"></i>Insert</a></li>
-            <li><a href="../tables/data.html"><i class="fa fa-circle-o"></i>View</a></li>
+            <li><a href="<?=$url?>data/insert"><i class="fa fa-circle-o text-green"></i>Insert</a></li>
+            <li><a href="<?=$url?>data/view"><i class="fa fa-circle-o text-blue"></i>View</a></li>
           </ul>
         </li>
       </ul>
@@ -126,3 +126,16 @@
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
+
+        <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Blank page
+        <small>it all starts here</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Examples</a></li>
+        <li class="active">Blank page</li>
+      </ol>
+    </section>

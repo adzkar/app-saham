@@ -14,7 +14,16 @@ class Template {
 
         public function view($data = null)
         {
-                $this->CI->load->view('admin/components/menu_view',['title' => $data['title']]);
+                if (!isset($data['title']))
+                        $data['title'] = null;
+                if (!isset($data['url']))
+                        $data['url'] = null;
+                $this->CI->load->view('admin/components/menu_view',
+                        [
+                                'title' => $data['title'],
+                                'url' => $data['url']
+                        ]
+                );
                 if (!isset($data['content'])) {
                         $this->CI->load->view('admin/blank_view');
                 } else {
