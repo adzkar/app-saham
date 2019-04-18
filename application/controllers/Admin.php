@@ -21,11 +21,16 @@ class Admin extends CI_Controller {
 		$this->template->view($data);
 	}
 
-	public function data()
+	public function data($param = null)
 	{
+		$content = 'admin/view_data';
+		if ($param == "insert") {
+			$content = 'admin/input_data';
+		}
 		$data = [
 			'url' => base_url('index.php/admin/'),
-			'title' => 'Data Saham'
+			'title' => 'Data Saham',
+			'content' => $content
 		];
 		$this->template->view($data);
 	}
