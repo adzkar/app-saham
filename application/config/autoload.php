@@ -1,6 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+// load eloquent
+require_once 'vendor/autoload.php';
 /*
 | -------------------------------------------------------------------
 | AUTO-LOADER
