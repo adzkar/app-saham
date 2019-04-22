@@ -33,7 +33,18 @@ class Admin extends CI_Controller {
 	public function data($param = null)
 	{
 		$content = 'admin/view_data';
+		$data = Tobinsq::All();
 		if ($param == "insert") {
+			// generate kode
+			$a = "AAAA";
+			if ($data->count()) {
+				$a = $data[$data->count()-1]->kode;
+				$i = strlen($a) - 1;
+				while (ord($a[$i]) >= 122 || ( ord($a[$i]) >= 90 && ord($a[$i]) <= 97 ))
+					$i--;
+				$a[$i] = chr(ord($a[$i]) + 1);
+			}
+			$data = $a;
 			$content = 'admin/input_data';
 		}
 		$data = [
@@ -41,7 +52,7 @@ class Admin extends CI_Controller {
 			'title' => 'Data Saham',
 			'content' => $content,
 			'data' => [
-				'data' => Tobinsq::All()
+				'data' => $data
 			]
 		];
 		$this->template->view($data);
