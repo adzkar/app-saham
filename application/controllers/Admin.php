@@ -39,7 +39,10 @@ class Admin extends CI_Controller {
 		$data = [
 			'url' => base_url('index.php/admin/'),
 			'title' => 'Data Saham',
-			'content' => $content
+			'content' => $content,
+			'data' => [
+				'data' => Tobinsq::All()
+			]
 		];
 		$this->template->view($data);
 	}
@@ -48,6 +51,23 @@ class Admin extends CI_Controller {
 	{
 		$this->session->sess_destroy();
 		redirect('login');
+	}
+
+	public function edittobinsq($id = null)
+	{
+		if (!$id) {
+			alert('Id Can\'t be null');
+			redirect('admin/data/view');
+		}
+		$data = [
+			'url' => base_url('index.php/admin/'),
+			'title' => 'Data Saham',
+			'content' => 'admin/edit_tobinsq',
+			'data' => [
+				'data' => Tobinsq::find($id)->first()
+			]
+		];
+		$this->template->view($data);
 	}
 
 }

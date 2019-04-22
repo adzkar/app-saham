@@ -14,31 +14,51 @@
         </div>
         <div class="box-body">
           <table class="table table-bordered">
-                <tr>
-                  <th style="width: 10px">#</th>
-                  <th>Kode</th>
-                  <th>Closing Price</th>
-                  <th>List Share</th>
-                  <th>Market Value</th>
-                  <th>Debt</th>
-                  <th>Assets</th>
-                  <th>Tobin's Q</th>
-                  <th style="width: 10%">Action</th>
-                </tr>
-                <tr>
-                  <td>1.</td>
-                  <td>ABC</td>
-                  <td>Rp. XXX XXX</td>
-                  <td>Rp. XXX XXX</td>
-                  <td>Rp. XXX XXX</td>
-                  <td>Rp. XXX XXX</td>
-                  <td>Rp. XXX XXX</td>
-                  <td>Rp. XXX XXX</td>
-                  <td>
-                    <span class="badge bg-blue">Edit</span>
-                    <span class="badge bg-red">Delete</span>
-                  </td>
-                </tr>
+                <thead>
+                  <tr>
+                    <th style="width: 10px">#</th>
+                    <th>Kode</th>
+                    <th>Closing Price</th>
+                    <th>List Share</th>
+                    <th>Market Value</th>
+                    <th>Debt</th>
+                    <th>Assets</th>
+                    <th>Tobin's Q</th>
+                    <th style="width: 10%">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php  
+                    if (!$data->count()) {
+                      echo "<tr><td colspan='9' class='text-center'>Empty</td></tr>";
+                    } else {
+                      $no = 1;
+                      foreach ($data as $value) {
+                  ?>
+                  <tr>
+                    <td><?= $no ?>.</td>
+                    <td><?= $value->kode ?></td>
+                    <td>Rp. <?= number_format($value->closing_price, 2) ?></td>
+                    <td>Rp. <?= number_format($value->list_share, 2) ?></td>
+                    <td>Rp. <?= number_format($value->closing_price*$value->list_share, 2) ?></td>
+                    <td>Rp. <?= number_format($value->debt, 2) ?></td>
+                    <td>Rp. <?= number_format($value->assets, 2) ?></td>
+                    <td><?= round(($value->closing_price*$value->list_share + $value->debt) / $value->assets, 3) ?></td>
+                    <td>
+                      <a href="<?= base_url() ?>index.php/admin/edittobinsq/<?= $value->id ?>">
+                        <span class="badge bg-blue">Edit</span>
+                      </a>
+                      <a href="<?= base_url() ?>index.php/tobinsq_c/delete/<?= $value->id ?>">
+                        <span class="badge bg-red">Delete</span> 
+                      </a>
+                    </td>
+                  </tr>
+                  <?php  
+                        $no++;
+                      } // foreach    
+                    } // else
+                  ?>
+                </tbody>
               </table>
         </div>
         <!-- /.box-body -->
