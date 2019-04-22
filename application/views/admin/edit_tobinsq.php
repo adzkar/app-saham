@@ -35,12 +35,11 @@
             <div class="col-6">
             <form action="<?= base_url() ?>index.php/tobinsq_c/update/<?= $data->id ?>" method="post">
               <div class="input-group">
-                <input type="text" class="form-control" placeholder="Kode" name="kode" style="width: 40%" maxlength="4" value="<?= $data->kode?>">
+                <input type="text" class="form-control" placeholder="Kode" name="kode" style="width: 40%" maxlength="4" value="<?= $data->kode?>" readonly>
               </div>
               <br>
               <label for="closing price">Closing Price</label>
               <div class="input-group"  style="width: 40%">
-                <span class="input-group-addon">Rp.</span>
                 <input type="text" class="form-control" placeholder="Closing Price" name="closing_price" value="<?= $data->closing_price?>">
                 <span class="input-group-addon">.00</span>
               </div><br>

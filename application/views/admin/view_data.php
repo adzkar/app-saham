@@ -38,7 +38,7 @@
                   <tr>
                     <td><?= $no ?>.</td>
                     <td><?= $value->kode ?></td>
-                    <td>Rp. <?= number_format($value->closing_price, 2) ?></td>
+                    <td><?= number_format($value->closing_price, 2) ?></td>
                     <td>Rp. <?= number_format($value->list_share, 2) ?></td>
                     <td>Rp. <?= number_format($value->closing_price*$value->list_share, 2) ?></td>
                     <td>Rp. <?= number_format($value->debt, 2) ?></td>
