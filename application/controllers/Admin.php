@@ -3,6 +3,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin extends CI_Controller {
 
+	public function __construct()
+    {
+        parent::__construct();
+        $this->load->model(['Tobinsq']);
+        if (!$this->session->userdata('status_login')) {
+			redirect(base_url());
+		}
+    }
+	
 	public function index()
 	{	
 		$data = [
@@ -33,6 +42,12 @@ class Admin extends CI_Controller {
 			'content' => $content
 		];
 		$this->template->view($data);
+	}
+
+	public function logout()
+	{
+		$this->session->sess_destroy();
+		redirect('login');
 	}
 
 }

@@ -34,19 +34,29 @@
   </div>
 
   <div class="register-box-body">
-    <p class="login-box-msg">Register a new membership</p>
-
     <?php  
-      if($this->session->flashdata('errors')) {
+      if ($this->session->flashdata('errors')) {
     ?>
-    <div class="alert alert-danger">
-      <strong>Errors!</strong><br>
+    <div class="alert alert-danger" >
+      <strong>Errors!</strong><br>  
       <?= $this->session->flashdata('errors') ?>
-    </div>
+      </div>
     <?php  
       }
     ?>
-
+    <?php  
+      if ($this->session->flashdata('success')) {
+    ?>
+    <div class="alert alert-success" >
+      <strong>Success!</strong><br>
+      <?= $this->session->flashdata('success') ?>  
+      <br>
+      Login <a href="<?= base_url() ?>">Click Me!</a>
+      </div>
+    <?php  
+      }
+    ?>
+    <p class="login-box-msg">Register a new membership</p>
     <form action="<?= base_url() ?>index.php/register/input" method="post">
       <div class="form-group has-feedback">
         <input type="text" class="form-control" placeholder="Full name" name="full_name">

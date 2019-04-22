@@ -60,11 +60,11 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="user user-menu">
             <a href="#">
-              <span class="hidden-xs">Alexander Pierce</span>
+              <span class="hidden-xs"><?= $this->session->userdata('data_user')['full_name'] ?></span>
             </a>
           </li>
           <li class="user user-menu">
-              <a href="#">
+              <a href="<?= base_url() ?>index.php/admin/logout">
                 <span class="hidden-xs">Logout</span>
               </a>
           </li>

@@ -27,7 +27,7 @@ class Template {
                 if (!isset($data['content'])) {
                         $this->CI->load->view('admin/blank_view');
                 } else if(isset($data['content'])) {
-                        $this->CI->load->view($data['content']);
+                        $this->CI->load->view($data['content'],$data['data']);
                 }
                 $this->CI->load->view('admin/components/footer_view');
         }

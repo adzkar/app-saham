@@ -32,11 +32,21 @@
   <div class="login-logo">
     <a href="<?= base_url() ?>"><b>Saham</b></a>
   </div>
+  <?php  
+      if ($this->session->flashdata('errors')) {
+    ?>
+    <div class="alert alert-danger" >
+      <strong>Errors!</strong><br>  
+      <?= $this->session->flashdata('errors') ?>
+      </div>
+    <?php  
+      }
+    ?>
   <!-- /.login-logo -->
   <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
 
-    <form action="../../index2.html" method="post">
+    <form action="<?= base_url()?>index.php/login/post" method="post">
       <div class="form-group has-feedback">
         <input type="text" class="form-control" placeholder="Username" name="username">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
@@ -47,11 +57,6 @@
       </div>
       <div class="row">
         <div class="col-xs-8">
-          <div class="checkbox icheck">
-            <label>
-              <input type="checkbox"> Remember Me
-            </label>
-          </div>
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
