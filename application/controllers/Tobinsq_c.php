@@ -85,4 +85,29 @@ class Tobinsq_c extends CI_Controller {
 		redirect('admin/data/view');
 	}
 
+	public function exportToExcel()
+	{
+		$data = Tobinsq::All();
+		// headers for download
+	    header("Content-Disposition: attachment; filename=Tobinsq.xls");
+	    header("Content-Type: application/vnd.ms-excel");
+		$flag = false;
+		$no = 1;
+	    foreach($data as $row) {
+	    	// Column Name
+	        if(!$flag) {
+	        	echo "#\tkode\tClosing Price\tList Share\tMarket Value\tDebt\tAssets\tTobin\'s Q\n";
+            	$flag = true;
+	        }
+			echo $no."\t".$row->kode."\t".$row->closing_price."\t".$row->closing_price*$row->list_share."\t".$row->list_share."\t".$row->debt."\t".$row->assets."\t".round(($row->closing_price*$row->list_share + $row->debt) / $row->assets, 3)."\n";
+	    	$no++;
+	    }
+	    exit;   
+		// $data = [
+		// 	'title' => 'Tobins\'q',
+		// 	'data' => Tobinsq::All()
+		// ];
+		// $this->load->view('admin/report', $data);	
+	}
+
 }
