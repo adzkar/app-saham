@@ -16,7 +16,7 @@ class Admin extends CI_Controller {
 	{	
 		$data = [
 			'url' => base_url('index.php/admin/')
-		];
+		]; 
 		$this->template->view($data);
 	}
 
