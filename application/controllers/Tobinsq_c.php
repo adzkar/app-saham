@@ -136,10 +136,11 @@ class Tobinsq_c extends CI_Controller {
 	    foreach($data as $row) {
 	    	// Column Name
 	        if(!$flag) {
-	        	echo "#\tkode\tClosing Price\tList Share\tMarket Value\tDebt\tAssets\tTobin\'s Q\n";
+	        	echo "#\tKode\tList Share\tMarket Value\tDebt\tAssets\tPiutang\tHutang\tModal\tPendapatan\tEPS\tROA\tROE\tDAR\tDER\tTobin\'s Q\tPBV\tClosing Price\n";
             	$flag = true;
 	        }
-			echo $no."\t".$row->kode."\t".$row->closing_price."\t".$row->closing_price*$row->list_share."\t".$row->list_share."\t".$row->debt."\t".$row->assets."\t".round(($row->closing_price*$row->list_share + $row->debt) / $row->assets, 3)."\n";
+	        $tobinsq = round(($row->closing_price*$row->list_share + $row->debt) / $row->assets, 3);
+			echo $no."\t$row->kode\t$row->list_share\t$row->closing_price*$row->list_share\t$row->debt\t$row->assets\t$row->piutang\t$row->hutang\t$row->modal\t$row->pendapatan\t$row->eps\t$row->roa\t$row->roe\t$row->dar\t$row->der\t$tobinsq\t$row->pbv\t$row->closing_price\n";
 	    	$no++;
 	    }
 	    exit;   
