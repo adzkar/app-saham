@@ -75,7 +75,7 @@ class Admin extends CI_Controller {
 			'title' => 'Data Saham',
 			'content' => 'admin/edit_tobinsq',
 			'data' => [
-				'data' => Tobinsq::find($id)->first()
+				'data' => Tobinsq::find($id)
 			]
 		];
 		$this->template->view($data);

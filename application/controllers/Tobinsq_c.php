@@ -19,6 +19,16 @@ class Tobinsq_c extends CI_Controller {
 		$this->form_validation->set_rules('list_share', 'List Share','required|numeric');
 		$this->form_validation->set_rules('debt', 'Debt','required|numeric');
 		$this->form_validation->set_rules('assets', 'Assets','required|numeric');
+		$this->form_validation->set_rules('piutang', 'piutang','required|numeric');
+		$this->form_validation->set_rules('hutang', 'hutang','required|numeric');
+		$this->form_validation->set_rules('modal', 'modal','required|numeric');
+		$this->form_validation->set_rules('pendapatan', 'pendapatan','required|numeric');
+		$this->form_validation->set_rules('eps', 'eps','required|numeric');
+		$this->form_validation->set_rules('roa', 'roa','required|decimal');
+		$this->form_validation->set_rules('roe', 'roe','required|decimal');
+		$this->form_validation->set_rules('dar', 'dar','required|decimal');
+		$this->form_validation->set_rules('der', 'der','required|decimal');
+		$this->form_validation->set_rules('pbv', 'pbv','required|numeric');
 		if (!$this->form_validation->run()) {
 			$this->session->set_flashdata('errors',validation_errors());	
 			redirect('admin/data/insert');
@@ -29,6 +39,16 @@ class Tobinsq_c extends CI_Controller {
 			'list_share' => $this->input->post('list_share'),
 			'debt' => $this->input->post('debt'),
 			'assets' => $this->input->post('assets'),
+			'piutang' => $this->input->post('piutang'),
+			'hutang' => $this->input->post('hutang'),
+			'modal' => $this->input->post('modal'),
+			'pendapatan' => $this->input->post('pendapatan'),
+			'eps' => $this->input->post('eps'),
+			'roa' => $this->input->post('roa'),
+			'roe' => $this->input->post('roe'),
+			'dar' => $this->input->post('dar'),
+			'der' => $this->input->post('der'),
+			'pbv' => $this->input->post('pbv'),
 			'id_user' => $this->session->userdata('data_user')['id']
 		]);
 		if ($save) {
@@ -52,6 +72,16 @@ class Tobinsq_c extends CI_Controller {
 		$this->form_validation->set_rules('list_share', 'List Share','required|numeric');
 		$this->form_validation->set_rules('debt', 'Debt','required|numeric');
 		$this->form_validation->set_rules('assets', 'Assets','required|numeric');
+		$this->form_validation->set_rules('piutang', 'piutang','required|numeric');
+		$this->form_validation->set_rules('hutang', 'hutang','required|numeric');
+		$this->form_validation->set_rules('modal', 'modal','required|numeric');
+		$this->form_validation->set_rules('pendapatan', 'pendapatan','required|numeric');
+		$this->form_validation->set_rules('eps', 'eps','required|numeric');
+		$this->form_validation->set_rules('roa', 'roa','required|decimal');
+		$this->form_validation->set_rules('roe', 'roe','required|decimal');
+		$this->form_validation->set_rules('dar', 'dar','required|decimal');
+		$this->form_validation->set_rules('der', 'der','required|decimal');
+		$this->form_validation->set_rules('pbv', 'pbv','required|numeric');
 		if (!$this->form_validation->run()) {
 			$this->session->set_flashdata('errors',validation_errors());	
 			redirect('admin/edittobinsq/'.$id);
@@ -62,6 +92,16 @@ class Tobinsq_c extends CI_Controller {
 			'list_share' => $this->input->post('list_share'),
 			'debt' => $this->input->post('debt'),
 			'assets' => $this->input->post('assets'),
+			'piutang' => $this->input->post('piutang'),
+			'hutang' => $this->input->post('hutang'),
+			'modal' => $this->input->post('modal'),
+			'pendapatan' => $this->input->post('pendapatan'),
+			'eps' => $this->input->post('eps'),
+			'roa' => $this->input->post('roa'),
+			'roe' => $this->input->post('roe'),
+			'dar' => $this->input->post('dar'),
+			'der' => $this->input->post('der'),
+			'pbv' => $this->input->post('pbv'),
 			'id_user' => $this->session->userdata('data_user')['id']
 		]);
 		// print_r($save);
