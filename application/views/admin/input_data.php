@@ -35,7 +35,7 @@
             <div class="col-6">
             <form action="<?= base_url() ?>index.php/tobinsq_c/addtobinsq" method="post">
               <div class="input-group">
-                <input type="text" class="form-control" placeholder="Kode" name="kode" style="width: 40%" maxlength="4" value="<?= $data?>" readonly>
+                <input type="text" class="form-control" placeholder="Kode" name="kode" style="width: 40%" maxlength="4" value="<?= $data?>">
               </div>
               <br>
               <div class="row">
