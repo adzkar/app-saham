@@ -15,6 +15,7 @@ class Tobinsq_c extends CI_Controller {
 	public function addtobinsq()
 	{
 		$this->form_validation->set_rules('kode', 'Full Name','required');
+		$this->form_validation->set_rules('tahun', 'Tahun','required|numeric');
 		$this->form_validation->set_rules('closing_price', 'Closing Price','required|numeric');
 		$this->form_validation->set_rules('list_share', 'List Share','required|numeric');
 		// $this->form_validation->set_rules('debt', 'Debt','required|numeric');
@@ -35,6 +36,7 @@ class Tobinsq_c extends CI_Controller {
 		}
 		$save = Tobinsq::create([
 			'kode' => $this->input->post('kode'),
+			'tahun' => $this->input->post('tahun'),
 			'closing_price' => $this->input->post('closing_price'),
 			'list_share' => $this->input->post('list_share'),
 			// 'debt' => $this->input->post('debt'),
@@ -68,6 +70,7 @@ class Tobinsq_c extends CI_Controller {
 		}
 		$tobinsq = Tobinsq::find($id);
 		$this->form_validation->set_rules('kode', 'Full Name','required');
+		$this->form_validation->set_rules('tahun', 'Tahun','required|numeric');
 		$this->form_validation->set_rules('closing_price', 'Closing Price','required|numeric');
 		$this->form_validation->set_rules('list_share', 'List Share','required|numeric');
 		// $this->form_validation->set_rules('debt', 'Debt','required|numeric');
@@ -88,6 +91,7 @@ class Tobinsq_c extends CI_Controller {
 		}
 		$save = $tobinsq->update([
 			'kode' => $this->input->post('kode'),
+			'tahun' => $this->input->post('tahun'),
 			'closing_price' => $this->input->post('closing_price'),
 			'list_share' => $this->input->post('list_share'),
 			// 'debt' => $this->input->post('debt'),

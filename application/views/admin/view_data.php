@@ -20,6 +20,7 @@
                     <tr>
                       <th style="width: 10px">#</th>
                       <th>Kode</th>
+                      <th>Tahun</th>
                       <th>List Share</th>
                       <th>Market Value</th>
                       <th>Assets</th>
@@ -49,6 +50,7 @@
                     <tr>
                       <td><?= $no ?>.</td>
                       <td><?= $value->kode ?></td>
+                      <td><?= $value->tahun ?></td>
                       <td>Rp. <?= number_format($value->list_share, 2) ?></td>
                       <td>Rp. <?= number_format($value->closing_price*$value->list_share, 2) ?></td>
                       <td>Rp. <?= number_format($value->assets, 2) ?></td>

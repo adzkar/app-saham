@@ -40,6 +40,10 @@
               <br>
               <div class="row">
                 <div class="col-md-6">
+                  <label for="closing price">Tahun</label>
+                  <div class="input-group"  style="width: 80%">
+                    <input type="text" class="form-control" placeholder="Tahun" name="tahun">
+                  </div><br>
                   <label for="closing price">Closing Price</label>
                   <div class="input-group"  style="width: 80%">
                     <input type="text" class="form-control" placeholder="Closing Price" name="closing_price">
