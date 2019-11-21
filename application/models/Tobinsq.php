@@ -8,7 +8,7 @@
 		protected $primaryKey = 'id';    
 	    public $timestamps = false;
 
-		protected $fillable = ['kode','closing_price','list_share','list_share','assets','id_user','piutang','hutang','modal','pendapatan','eps','roa','roe','dar','der','pbv'];
+		protected $fillable = ['kode','closing_price','list_share','list_share','assets','id_user','piutang','hutang','modal','pendapatan','eps','roa','roe','dar','der','pbv','tahun'];
 	
 		public function user()
 		{
