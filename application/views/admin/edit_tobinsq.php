@@ -51,12 +51,6 @@
                     <input type="text" class="form-control" placeholder="List Share" name="list_share" value="<?= $data->list_share?>">
                     <span class="input-group-addon">.00</span>
                   </div><br>
-                  <label for="closing price">Debt</label>
-                  <div class="input-group"  style="width: 80%">
-                    <span class="input-group-addon">Rp.</span>
-                    <input type="text" class="form-control" placeholder="Debt" name="debt" value="<?= $data->debt?>">
-                    <span class="input-group-addon">.00</span>
-                  </div><br>
                   <label for="closing price">Assets</label>
                   <div class="input-group"  style="width: 80%">
                     <span class="input-group-addon">Rp.</span>

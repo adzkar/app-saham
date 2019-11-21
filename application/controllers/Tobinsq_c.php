@@ -17,7 +17,7 @@ class Tobinsq_c extends CI_Controller {
 		$this->form_validation->set_rules('kode', 'Full Name','required');
 		$this->form_validation->set_rules('closing_price', 'Closing Price','required|numeric');
 		$this->form_validation->set_rules('list_share', 'List Share','required|numeric');
-		$this->form_validation->set_rules('debt', 'Debt','required|numeric');
+		// $this->form_validation->set_rules('debt', 'Debt','required|numeric');
 		$this->form_validation->set_rules('assets', 'Assets','required|numeric');
 		$this->form_validation->set_rules('piutang', 'piutang','required|numeric');
 		$this->form_validation->set_rules('hutang', 'hutang','required|numeric');
@@ -37,7 +37,7 @@ class Tobinsq_c extends CI_Controller {
 			'kode' => $this->input->post('kode'),
 			'closing_price' => $this->input->post('closing_price'),
 			'list_share' => $this->input->post('list_share'),
-			'debt' => $this->input->post('debt'),
+			// 'debt' => $this->input->post('debt'),
 			'assets' => $this->input->post('assets'),
 			'piutang' => $this->input->post('piutang'),
 			'hutang' => $this->input->post('hutang'),
@@ -70,7 +70,7 @@ class Tobinsq_c extends CI_Controller {
 		$this->form_validation->set_rules('kode', 'Full Name','required');
 		$this->form_validation->set_rules('closing_price', 'Closing Price','required|numeric');
 		$this->form_validation->set_rules('list_share', 'List Share','required|numeric');
-		$this->form_validation->set_rules('debt', 'Debt','required|numeric');
+		// $this->form_validation->set_rules('debt', 'Debt','required|numeric');
 		$this->form_validation->set_rules('assets', 'Assets','required|numeric');
 		$this->form_validation->set_rules('piutang', 'piutang','required|numeric');
 		$this->form_validation->set_rules('hutang', 'hutang','required|numeric');
@@ -90,7 +90,7 @@ class Tobinsq_c extends CI_Controller {
 			'kode' => $this->input->post('kode'),
 			'closing_price' => $this->input->post('closing_price'),
 			'list_share' => $this->input->post('list_share'),
-			'debt' => $this->input->post('debt'),
+			// 'debt' => $this->input->post('debt'),
 			'assets' => $this->input->post('assets'),
 			'piutang' => $this->input->post('piutang'),
 			'hutang' => $this->input->post('hutang'),
@@ -136,11 +136,11 @@ class Tobinsq_c extends CI_Controller {
 	    foreach($data as $row) {
 	    	// Column Name
 	        if(!$flag) {
-	        	echo "#\tKode\tList Share\tMarket Value\tDebt\tAssets\tPiutang\tHutang\tModal\tPendapatan\tEPS\tROA\tROE\tDAR\tDER\tTobin\'s Q\tPBV\tClosing Price\n";
+	        	echo "#\tKode\tList Share\tMarket Value\tAssets\tPiutang\tHutang\tModal\tPendapatan\tEPS\tROA\tROE\tDAR\tDER\tTobin\'s Q\tPBV\tClosing Price\n";
             	$flag = true;
 	        }
-	        $tobinsq = round(($row->closing_price*$row->list_share + $row->debt) / $row->assets, 3);
-			echo $no."\t$row->kode\t$row->list_share\t$row->closing_price*$row->list_share\t$row->debt\t$row->assets\t$row->piutang\t$row->hutang\t$row->modal\t$row->pendapatan\t$row->eps\t$row->roa\t$row->roe\t$row->dar\t$row->der\t$tobinsq\t$row->pbv\t$row->closing_price\n";
+	        $tobinsq = round(($row->closing_price*$row->list_share) / $row->assets, 3);
+			echo $no."\t$row->kode\t$row->list_share\t$row->closing_price*$row->list_share\t$row->assets\t$row->piutang\t$row->hutang\t$row->modal\t$row->pendapatan\t$row->eps\t$row->roa\t$row->roe\t$row->dar\t$row->der\t$tobinsq\t$row->pbv\t$row->closing_price\n";
 	    	$no++;
 	    }
 	    exit;   

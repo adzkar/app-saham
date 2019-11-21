@@ -21,7 +21,6 @@
                     <th>Kode</th>
                     <th>List Share</th>
                     <th>Market Value</th>
-                    <th>Debt</th>
                     <th>Assets</th>
                     <th>Piutang</th>
                     <th>Hutang</th>
@@ -51,7 +50,6 @@
                     <td><?= $value->kode ?></td>
                     <td>Rp. <?= number_format($value->list_share, 2) ?></td>
                     <td>Rp. <?= number_format($value->closing_price*$value->list_share, 2) ?></td>
-                    <td>Rp. <?= number_format($value->debt, 2) ?></td>
                     <td>Rp. <?= number_format($value->assets, 2) ?></td>
                     <td>Rp. <?= number_format($value->piutang, 2) ?></td>
                     <td>Rp. <?= number_format($value->hutang, 2) ?></td>
@@ -62,7 +60,7 @@
                     <td><?= number_format($value->roe, 2) ?> %</td>
                     <td><?= number_format($value->dar, 2) ?></td>
                     <td><?= number_format($value->der, 2) ?></td>
-                    <td><?= round(($value->closing_price*$value->list_share + $value->debt) / $value->assets, 3) ?></td>
+                    <td><?= round(($value->closing_price*$value->list_share) / $value->assets, 3) ?></td>
                     <td>Rp. <?= number_format($value->pbv, 2) ?></td>
                     <td>Rp. <?= number_format($value->closing_price, 2) ?></td>
                     <td>
